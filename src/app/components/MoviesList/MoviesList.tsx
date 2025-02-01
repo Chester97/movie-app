@@ -1,7 +1,7 @@
 import { getMovies } from '@/app/api/getMovies';
+import { MovieItem } from '@/app/components/MovieItem/MovieItem';
 
 import styles from './MoviesList.module.scss';
-import { MovieItem } from '../MovieItem/MovieItem';
 
 export const MoviesList = async () => {
   const data = await getMovies();

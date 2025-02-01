@@ -1,21 +1,18 @@
 import Image from 'next/image';
+
+import Link from 'next/link';
 import cx from 'classnames';
 
 import { MovieItemContent } from '@/app/components/MovieItemContent/MovieItemContent';
 import type { Movie } from '@/app/types/movie';
 
 import styles from './Dialog.module.scss';
-import { DialogCloseButton } from '../DialogCloseButton/DialogCloseButton';
-import { useModal } from '@/app/contexts/ModalProvider';
-import { Modals } from '@/app/contexts/modal-manager';
 
 type DialogProps = {
   movie: Movie;
 };
 
 export const Dialog = ({ movie }: DialogProps) => {
-  const { closeModal } = useModal();
-
   return (
     <div className={styles.dialogWrapper}>
       <div className={styles.dialogImageWrapper}>
@@ -36,10 +33,18 @@ export const Dialog = ({ movie }: DialogProps) => {
         release_date={movie.release_date}
         overview={movie.overview}
       />
-      <DialogCloseButton
-        onClick={() => closeModal(Modals.DIALOG)}
+      <Link
+        href="/"
+        scroll={false}
         className={styles.dialogCloseButton}
-      />
+      >
+        <Image
+          src="/close.svg"
+          alt="Close dialog"
+          width={20}
+          height={20}
+        />
+      </Link>
     </div>
   );
 };

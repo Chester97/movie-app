@@ -1,19 +1,35 @@
-import { getMovies } from '@/app/api/getMovies';
-import { ModalProvider } from '@/app/contexts/ModalProvider';
+import { Suspense } from 'react';
+
 import { MoviesList } from '@/app/components/MoviesList/MoviesList';
 import { Title } from '@/app/components/Title/Title';
+import { MovieModal } from '@/app/components/MovieModal/MovieModal';
+import { DialogSkeleton } from '@/app/components/DialogSkeleton/DialogSkeleton';
+import { MovieListSkeleton } from '@/app/components/MovieItemSkeleton/MovieItemSkeleton';
 
 import styles from './Page.module.scss';
 
-export default async function Home() {
-  const data = await getMovies();
+type Props = {
+  searchParams: Promise<{
+    [key: string]: string | undefined;
+  }>;
+};
+
+export default async function Home({ searchParams }: Props) {
+  const { movie } = await searchParams;
 
   return (
-    <ModalProvider initialMovies={data}>
+    <>
       <div className={styles.pageWrapper}>
         <Title />
-        <MoviesList />
+        <Suspense fallback={<MovieListSkeleton />}>
+          <MoviesList />
+        </Suspense>
       </div>
-    </ModalProvider>
+      {movie && (
+        <Suspense key={movie} fallback={<DialogSkeleton />}>
+          <MovieModal movieId={movie} />
+        </Suspense>
+      )}
+    </>
   );
 }

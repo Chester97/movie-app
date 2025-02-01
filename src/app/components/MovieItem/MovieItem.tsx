@@ -3,14 +3,12 @@
 import { useState } from 'react';
 import cx from 'classnames';
 import Image from 'next/image';
+import Link from 'next/link';
 
+import { MovieItemContent } from '@/app/components/MovieItemContent/MovieItemContent';
 import type { Movie } from '@/app/types/movie';
 
 import styles from './MovieItem.module.scss';
-import { useModal } from '@/app/contexts/ModalProvider';
-import { Modals } from '@/app/contexts/modal-manager';
-import { MovieItemContent } from '../MovieItemContent/MovieItemContent';
-import Link from 'next/link';
 
 type MovieItemProps = {
   movie: Movie;
@@ -18,17 +16,9 @@ type MovieItemProps = {
 
 export const MovieItem = ({ movie }: MovieItemProps) => {
   const [isImageLoading, setImageLoading] = useState(true);
-  const { openModal } = useModal();
-
-  const handleOpenModal = () => {
-    openModal(Modals.DIALOG, movie);
-  };
 
   return (
-    <li
-      className={styles.movieItemContainer}
-      onClick={handleOpenModal}
-    >
+    <li className={styles.movieItemContainer}>
       <Link
         href={`/?movie=${movie.id}`}
         className={styles.movieItemLink}

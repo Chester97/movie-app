@@ -2,8 +2,6 @@ import type React from 'react';
 import type { Metadata } from 'next';
 import { Lato } from 'next/font/google';
 
-import { ModalProvider } from '@/app/contexts/ModalProvider';
-
 import './reset.css';
 import styles from './mainLayout.module.scss';
 

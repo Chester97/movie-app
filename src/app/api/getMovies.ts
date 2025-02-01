@@ -11,6 +11,7 @@ type MovieResponse = {
 };
 
 // By default page is 1, i didn't implement pagination cause its not in reuqirements
+// Also, no need to catch errors here, it will be catched in the component
 export async function getMovies() {
   const res = await fetch(
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.MOVIES_API_KEY}`,
@@ -20,5 +21,6 @@ export async function getMovies() {
   );
   const data: MovieResponse = await res.json();
   if (!data) notFound();
+
   return convertMovieSchema(data.results);
 }

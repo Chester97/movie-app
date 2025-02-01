@@ -1,6 +1,6 @@
 import type { Movie, Movie_API } from '@/app/types/movie';
 
-const generateYear = (dateString: string) => {
+export const generateYear = (dateString: string) => {
   const date = new Date(dateString);
 
   if (isNaN(date.getTime())) {

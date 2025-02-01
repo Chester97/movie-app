@@ -1,0 +1,11 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  gap: 40px;
+
+  @media (min-width: 1440px) {
+    gap: 80px;
+    margin: 80px 20px;
+  }
+}

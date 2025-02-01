@@ -1,0 +1,25 @@
+.container {
+  margin-bottom: 20px;
+}
+
+.movies {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%;
+  justify-content: center;
+  gap: 24px;
+}
+
+.moviesCaption {
+  font-size: clamp(16px, calc(16px + 1vw), 24px);
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.2;
+}
+
+.moviesListContainer {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: minmax(240px, 480px);
+}

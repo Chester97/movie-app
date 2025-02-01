@@ -1,0 +1,38 @@
+.movieItemContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
+}
+
+.movieItemName {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #000000;
+  max-width: 100%;
+  word-wrap: break-word;
+  padding-right: 25px;
+
+  &__dialog {
+    font-size: 24px;
+  }
+}
+
+.movieItemReleaseDate {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.movieItemOverview {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+}

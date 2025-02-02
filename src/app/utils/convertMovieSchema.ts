@@ -16,7 +16,7 @@ export const generateSchema = (movie: Movie_API) => {
     title: movie.title,
     overview: movie.overview,
     release_date: generateYear(movie.release_date),
-    imageUrl: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+    imageUrl: `https://image.tmdb.org/t/p/w200${movie.poster_path}`,
   };
 };
 

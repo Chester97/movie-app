@@ -25,11 +25,12 @@ export const Dialog = ({ movie }: DialogProps) => {
           })}
           width={120}
           height={180}
-          sizes="120px"
+          sizes="(max-width: 480px) 100px, 120px"
         />
       </div>
       <MovieItemContent
         title={movie.title}
+        className={styles.dialogMovieItemContent}
         release_date={movie.release_date}
         overview={movie.overview}
       />

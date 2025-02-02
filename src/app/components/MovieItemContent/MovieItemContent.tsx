@@ -6,17 +6,19 @@ import styles from './MovieItemContent.module.scss';
 
 type MovieItemContentProps = {
   title: Movie['title'];
+  className?: string;
   release_date: Movie['release_date'];
   overview?: Movie['overview'];
 };
 
 export const MovieItemContent = ({
   title,
+  className,
   release_date,
   overview,
 }: MovieItemContentProps) => {
   return (
-    <div className={styles.movieItemContent}>
+    <div className={cx(styles.movieItemContent, className)}>
       <h3
         className={cx(styles.movieItemName, {
           [styles.movieItemName__dialog]: overview,

@@ -6,7 +6,11 @@ type ModalOverlayProps = {
 
 export const ModalOverlay = ({ children }: ModalOverlayProps) => {
   return (
-    <div className={styles.modalOverlay}>
+    <div
+      role="dialog"
+      aria-modal="true"
+      className={styles.modalOverlay}
+    >
       <div className={styles.modalProviderWrapper}>{children}</div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Movie_API } from '../types/movie';
+import { Movie_API } from '@/app/types/movie';
 import { generateSchema } from '@/app/utils/convertMovieSchema';
 
 import { redirect } from 'next/navigation';

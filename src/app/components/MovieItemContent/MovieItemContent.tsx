@@ -2,6 +2,7 @@ import Image from 'next/image';
 import cx from 'classnames';
 
 import { Movie } from '@/app/types/movie';
+
 import styles from './MovieItemContent.module.scss';
 
 type MovieItemContentProps = {

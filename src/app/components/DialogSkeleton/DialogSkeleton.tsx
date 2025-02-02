@@ -1,4 +1,4 @@
-import { ModalOverlay } from '../ModalOverlay/ModalOverlay';
+import { ModalOverlay } from '@/app/components/ModalOverlay/ModalOverlay';
 import styles from './DialogSkeleton.module.scss';
 
 export const DialogSkeleton = () => {

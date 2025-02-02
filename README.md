@@ -1,1 +1,15 @@
-## OLD VERSION WITH CLIENT-SIDE MODAL HANDLING: 683e3557e9eccc64a0a386bc17ea7b0ca84495b9
+## Requirements
+
+- node >=18.17.0
+
+## Installation
+
+```bash
+npm install
+```
+
+## Usage
+
+```bash
+npm run dev
+```
